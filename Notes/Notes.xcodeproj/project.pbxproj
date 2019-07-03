@@ -15,6 +15,13 @@
 		629B496822CD054600F13CA1 /* FoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B496522CD054600F13CA1 /* FoldersViewController.swift */; };
 		629B496922CD054600F13CA1 /* FoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B496622CD054600F13CA1 /* FoldersView.swift */; };
 		629B496B22CD056500F13CA1 /* RootViewGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B496A22CD056500F13CA1 /* RootViewGettable.swift */; };
+		629B497122CD148E00F13CA1 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B496F22CD148E00F13CA1 /* FolderTableViewCell.swift */; };
+		629B497222CD148E00F13CA1 /* FolderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629B497022CD148E00F13CA1 /* FolderTableViewCell.xib */; };
+		629B497422CD16C300F13CA1 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497322CD16C300F13CA1 /* UITableView+Extensions.swift */; };
+		629B497622CD1A9700F13CA1 /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497522CD1A9700F13CA1 /* UINib+Extensions.swift */; };
+		629B497822CD1AC500F13CA1 /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */; };
+		629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497922CD1DAE00F13CA1 /* Folder.swift */; };
+		629B497C22CD291600F13CA1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497B22CD291600F13CA1 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		629B496522CD054600F13CA1 /* FoldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersViewController.swift; sourceTree = "<group>"; };
 		629B496622CD054600F13CA1 /* FoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersView.swift; sourceTree = "<group>"; };
 		629B496A22CD056500F13CA1 /* RootViewGettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewGettable.swift; sourceTree = "<group>"; };
+		629B496F22CD148E00F13CA1 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
+		629B497022CD148E00F13CA1 /* FolderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FolderTableViewCell.xib; sourceTree = "<group>"; };
+		629B497322CD16C300F13CA1 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		629B497522CD1A9700F13CA1 /* UINib+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
+		629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
+		629B497922CD1DAE00F13CA1 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		629B497B22CD291600F13CA1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,8 @@
 		629B495822CD011E00F13CA1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				629B497922CD1DAE00F13CA1 /* Folder.swift */,
+				629B497B22CD291600F13CA1 /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +108,9 @@
 		629B495C22CD020100F13CA1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				629B497322CD16C300F13CA1 /* UITableView+Extensions.swift */,
+				629B497522CD1A9700F13CA1 /* UINib+Extensions.swift */,
+				629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,9 +140,8 @@
 		629B496022CD023700F13CA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				629B496422CD054600F13CA1 /* FoldersViewController.storyboard */,
-				629B496522CD054600F13CA1 /* FoldersViewController.swift */,
-				629B496622CD054600F13CA1 /* FoldersView.swift */,
+				629B496D22CD11FD00F13CA1 /* NotesViewController */,
+				629B496C22CD11E500F13CA1 /* FoldersViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -135,6 +153,33 @@
 				629B496A22CD056500F13CA1 /* RootViewGettable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		629B496C22CD11E500F13CA1 /* FoldersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				629B496E22CD146E00F13CA1 /* Private */,
+				629B496422CD054600F13CA1 /* FoldersViewController.storyboard */,
+				629B496522CD054600F13CA1 /* FoldersViewController.swift */,
+				629B496622CD054600F13CA1 /* FoldersView.swift */,
+			);
+			path = FoldersViewController;
+			sourceTree = "<group>";
+		};
+		629B496D22CD11FD00F13CA1 /* NotesViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NotesViewController;
+			sourceTree = "<group>";
+		};
+		629B496E22CD146E00F13CA1 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				629B496F22CD148E00F13CA1 /* FolderTableViewCell.swift */,
+				629B497022CD148E00F13CA1 /* FolderTableViewCell.xib */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +243,7 @@
 				629B496722CD054600F13CA1 /* FoldersViewController.storyboard in Resources */,
 				629B495122CD010C00F13CA1 /* LaunchScreen.storyboard in Resources */,
 				629B494E22CD010C00F13CA1 /* Assets.xcassets in Resources */,
+				629B497222CD148E00F13CA1 /* FolderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,10 +255,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				629B496322CD033B00F13CA1 /* StoryboardLoadable.swift in Sources */,
+				629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */,
+				629B497422CD16C300F13CA1 /* UITableView+Extensions.swift in Sources */,
 				629B496B22CD056500F13CA1 /* RootViewGettable.swift in Sources */,
+				629B497622CD1A9700F13CA1 /* UINib+Extensions.swift in Sources */,
 				629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */,
 				629B496922CD054600F13CA1 /* FoldersView.swift in Sources */,
+				629B497C22CD291600F13CA1 /* Note.swift in Sources */,
+				629B497822CD1AC500F13CA1 /* UIVIew+Extensions.swift in Sources */,
 				629B496822CD054600F13CA1 /* FoldersViewController.swift in Sources */,
+				629B497122CD148E00F13CA1 /* FolderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

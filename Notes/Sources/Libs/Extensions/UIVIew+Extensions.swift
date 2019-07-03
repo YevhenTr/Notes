@@ -1,5 +1,5 @@
 //
-//  FoldersView.swift
+//  UIVIew+Extensions.swift
 //  Notes
 //
 //  Created by Yevhen Triukhan on 7/3/19.
@@ -8,6 +8,9 @@
 
 import UIKit
 
-class FoldersView: UIView {
+extension UIView {
     
+    static var className: String {
+        return String(describing: self)
+    }
 }
