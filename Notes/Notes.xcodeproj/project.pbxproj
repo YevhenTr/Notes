@@ -22,6 +22,8 @@
 		629B497822CD1AC500F13CA1 /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */; };
 		629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497922CD1DAE00F13CA1 /* Folder.swift */; };
 		629B497C22CD291600F13CA1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497B22CD291600F13CA1 /* Note.swift */; };
+		629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497D22CD3DBA00F13CA1 /* Optional+Extensions.swift */; };
+		629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
 		629B497922CD1DAE00F13CA1 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		629B497B22CD291600F13CA1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		629B497D22CD3DBA00F13CA1 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				629B497322CD16C300F13CA1 /* UITableView+Extensions.swift */,
 				629B497522CD1A9700F13CA1 /* UINib+Extensions.swift */,
 				629B497722CD1AC500F13CA1 /* UIVIew+Extensions.swift */,
+				629B497D22CD3DBA00F13CA1 /* Optional+Extensions.swift */,
+				629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				629B496322CD033B00F13CA1 /* StoryboardLoadable.swift in Sources */,
+				629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */,
+				629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */,
 				629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */,
 				629B497422CD16C300F13CA1 /* UITableView+Extensions.swift in Sources */,
 				629B496B22CD056500F13CA1 /* RootViewGettable.swift in Sources */,

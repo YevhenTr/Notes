@@ -16,7 +16,7 @@ class FoldersViewController: UIViewController, StoryboardLoadable, RootViewGetta
     
     //  MARK: Properties
     
-    private let folders = [Folder(name: "Name1"), Folder(name: "Name2")]
+    private var folders = [Folder(name: "Name1"), Folder(name: "Name2")]
     
     
     //  MARK: View Lifecycle
@@ -30,17 +30,32 @@ class FoldersViewController: UIViewController, StoryboardLoadable, RootViewGetta
     //  MARK: Actions
     
     @IBAction func onNewFolder(_ sender: UIBarButtonItem) {
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let onPhone = UIAlertAction(title: "On My iPhone", style: .default, handler: nil)
+        let onCloud = UIAlertAction(title: "Cloud", style: .default, handler: nil)
+        let actions: [UIAlertAction]? = [onPhone, onCloud, cancel]
         
+        self.showActionSheet(title: "New folder", message: "Where would you like to add this folder?", actions: actions)
     }
     
     //  MARK: Private API
     
     private func setupUI() {
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
         let table = self.rootView?.foldersTableView
         table?.register(FolderTableViewCell.self)
         table?.delegate = self
         table?.dataSource = self
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
         
+        self.rootView?.foldersTableView.do {
+            $0.setEditing(!$0.isEditing, animated: animated)
+        }        
     }
 }
 
