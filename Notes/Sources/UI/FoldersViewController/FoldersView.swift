@@ -11,4 +11,5 @@ import UIKit
 class FoldersView: UIView {
     
     @IBOutlet var foldersTableView: UITableView?
+    @IBOutlet var newFolderButton: UIBarButtonItem?
 }

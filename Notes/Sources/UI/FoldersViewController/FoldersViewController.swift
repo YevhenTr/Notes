@@ -31,9 +31,14 @@ class FoldersViewController: UIViewController, StoryboardLoadable, RootViewGetta
     
     @IBAction func onNewFolder(_ sender: UIBarButtonItem) {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        let onPhone = UIAlertAction(title: "On My iPhone", style: .default, handler: nil)
-        let onCloud = UIAlertAction(title: "Cloud", style: .default, handler: nil)
-        let actions: [UIAlertAction]? = [onPhone, onCloud, cancel]
+        let onPhone = UIAlertAction(title: "On My iPhone", style: .default) { [weak self] _ in
+            let id = (self?.folders.count ?? 0) + 1
+            self?.folders.append(Folder(name: "Name\(id)"))
+            self?.rootView?.foldersTableView?.insertRows(at: [IndexPath(row: id - 1, section: 0)], with: .left)
+//            self?.rootView?.foldersTableView?.reloadData()
+        }
+//        let onCloud = UIAlertAction(title: "Cloud", style: .default, handler: nil)
+        let actions: [UIAlertAction]? = [onPhone, cancel]
         
         self.showActionSheet(title: "New folder", message: "Where would you like to add this folder?", actions: actions)
     }
@@ -53,9 +58,8 @@ class FoldersViewController: UIViewController, StoryboardLoadable, RootViewGetta
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
         
-        self.rootView?.foldersTableView.do {
-            $0.setEditing(!$0.isEditing, animated: animated)
-        }        
+        self.rootView?.foldersTableView?.setEditing(editing, animated: animated)
+        self.rootView?.newFolderButton?.isEnabled = !editing
     }
 }
 
@@ -74,5 +78,15 @@ extension FoldersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = self.folders[indexPath.row].name
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            self.folders.remove(at: indexPath.row)
+            self.rootView?.foldersTableView?.deleteRows(at: [indexPath], with: .left)
+        default:
+            break
+        }
     }
 }

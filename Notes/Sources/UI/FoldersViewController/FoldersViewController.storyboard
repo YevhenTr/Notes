@@ -50,6 +50,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outlet property="foldersTableView" destination="dGt-A7-sRE" id="Ndy-yQ-IPm"/>
+                            <outlet property="newFolderButton" destination="QGM-xF-diZ" id="P1n-T1-m4F"/>
                         </connections>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
