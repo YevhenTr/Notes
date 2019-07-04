@@ -13,12 +13,12 @@ class Note {
     //  MARK: Properties
     
     let content: String
-    let timestamp: Data
+    let timestamp: Date
     
     //  MARK: Init and deinit
     
     init(content: String) {
         self.content = content
-        self.timestamp = Data()
+        self.timestamp = Date()
     }
 }

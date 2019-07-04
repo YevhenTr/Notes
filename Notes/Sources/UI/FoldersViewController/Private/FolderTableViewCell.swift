@@ -10,15 +10,13 @@ import UIKit
 
 class FolderTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+extension FolderTableViewCell: Configurable {
     
+    func configure(with model: Any) {
+        if let model = model as? Folder {
+            self.textLabel?.text = model.name
+        }
+    }
 }
