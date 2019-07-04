@@ -10,20 +10,23 @@ import UIKit
 
 class NotesTableViewController: BaseTableViewController<Note, NoteTableViewCell> {
     
+    //  MARK: View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.rootView?.addButton?.title = "New Note"
+        
         self.addAction = { [weak self] in
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-            let onPhone = UIAlertAction(title: "On My iPhone", style: .default) { _ in
-                let id = (self?.model.count ?? 0) + 1
-                self?.model.append(Note(content: "content\(id)"))
-                self?.rootView?.itemsTableView?.insertRows(at: [IndexPath(row: id - 1, section: 0)], with: .left)
+            let onPhone = UIAlertAction(title: "On My iPhone", style: .default) { [weak self] _ in
+                guard let count = self?.model.count else { return }
+                
+                self?.model.append(Note(content: "Note\(count)"))
+                self?.rootView?.mainTableView?.insertRows(at: [IndexPath(row: count, section: 0)], with: .left)
             }
-            //        let onCloud = UIAlertAction(title: "Cloud", style: .default, handler: nil)
-            let actions: [UIAlertAction]? = [onPhone, cancel]
             
-            self?.showActionSheet(title: "New folder", message: "Where would you like to add this folder?", actions: actions)
+            self?.showActionSheet(title: "New note", message: "Where would you like to add this note?", actions: [onPhone, cancel])
         }
         
         self.selectAction = { [weak self] note in

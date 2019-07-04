@@ -26,9 +26,9 @@ class BaseTableViewController<Model, Cell: UITableViewCell & Configurable>: UIVi
 
     //  MARK: Class methods
     
-    static func create(with model: [Model]) -> Self {
+    static func create(with model: [Model]? = nil) -> Self {
         let controller = self.init()
-        controller.model = model
+        model.do { controller.model = $0 }
         
         return controller
     }
@@ -43,23 +43,15 @@ class BaseTableViewController<Model, Cell: UITableViewCell & Configurable>: UIVi
         super.viewDidLoad()
         
         self.setupUI()
-        self.setupAddAction()
     }
     
-    //  MARK: Actions
+    //  MARK: Public API
     
-    func setupAddAction() {
-        //        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        //        let onPhone = UIAlertAction(title: "On My iPhone", style: .default) { [weak self] _ in
-        //            let id = (self?.model.count ?? 0) + 1
-        //            self?.model.append(Folder(name: "Name\(id)"))
-        //            self?.rootView?.foldersTableView?.insertRows(at: [IndexPath(row: id - 1, section: 0)], with: .left)
-        //            //            self?.rootView?.foldersTableView?.reloadData()
-        //        }
-        //        //        let onCloud = UIAlertAction(title: "Cloud", style: .default, handler: nil)
-        //        let actions: [UIAlertAction]? = [onPhone, cancel]
-        //
-        //        self.showActionSheet(title: "New folder", message: "Where would you like to add this folder?", actions: actions)
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: true)
+        
+        self.rootView?.mainTableView?.setEditing(editing, animated: animated)
+        self.rootView?.addButton?.isEnabled = !editing
     }
     
     //  MARK: Private API
@@ -68,36 +60,22 @@ class BaseTableViewController<Model, Cell: UITableViewCell & Configurable>: UIVi
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        let table = self.rootView?.itemsTableView
+        let table = self.rootView?.mainTableView
         table?.register(Cell.self)
         table?.delegate = self
         table?.dataSource = self
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
-        
-        self.rootView?.itemsTableView?.setEditing(editing, animated: animated)
-        self.rootView?.addItemButton?.isEnabled = !editing
-    }
-    //}
-    
     //  MARK: UITableViewDelegate, UITableViewDataSource
     
-    //extension BaseTableViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Cell.className, for: indexPath)
-        
-        if let cell = cell as? Cell {
-            cell.configure(with: self.model[indexPath.row])
-        }
-        //        cell.textLabel?.text = self.folders[indexPath.row].name
+        (cell as? Cell).do { $0.configure(with: self.model[indexPath.row]) }
         
         return cell
     }
@@ -106,7 +84,7 @@ class BaseTableViewController<Model, Cell: UITableViewCell & Configurable>: UIVi
         switch editingStyle {
         case .delete:
             self.model.remove(at: indexPath.row)
-            self.rootView?.itemsTableView?.deleteRows(at: [indexPath], with: .left)
+            self.rootView?.mainTableView?.deleteRows(at: [indexPath], with: .left)
         default:
             break
         }
@@ -114,8 +92,6 @@ class BaseTableViewController<Model, Cell: UITableViewCell & Configurable>: UIVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         self.selectAction?(self.model[indexPath.row])
-//        self.navigationController?.pushViewController(NotesViewController.loadFromStoryboard(), animated: true)
     }
 }

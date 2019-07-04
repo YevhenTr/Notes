@@ -10,16 +10,16 @@ import UIKit
 
 class BaseTableView: NibDesignable {
     
-    @IBOutlet var itemsTableView: UITableView?
-    @IBOutlet var addItemButton: UIBarButtonItem?
+    //  MARK: Properties
+    
+    @IBOutlet var mainTableView: UITableView?
+    @IBOutlet var addButton: UIBarButtonItem?
     
     var addAction: (() -> ())?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    //  MARK: Public API
     
-    @IBAction func onNewFolder(_ sender: UIBarButtonItem) {
+    @IBAction func onAddButton(_ sender: UIBarButtonItem) {
         self.addAction?()
     }
 }

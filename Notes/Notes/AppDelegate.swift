@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let controller = FoldersViewController.create(with: [Folder(name: "folder1"), Folder(name: "folder2")])
-        window.rootViewController = UINavigationController(rootViewController: controller)
+        window.rootViewController = UINavigationController(rootViewController: FoldersViewController.create())
         window.makeKeyAndVisible()
-        
         self.window = window
         
         return true
