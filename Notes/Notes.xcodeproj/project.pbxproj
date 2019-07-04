@@ -25,6 +25,9 @@
 		629B497C22CD291600F13CA1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497B22CD291600F13CA1 /* Note.swift */; };
 		629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497D22CD3DBA00F13CA1 /* Optional+Extensions.swift */; };
 		629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */; };
+		62D98BB822CE46B700BC7805 /* NoteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D98BB522CE46B700BC7805 /* NoteViewController.storyboard */; };
+		62D98BB922CE46B700BC7805 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D98BB622CE46B700BC7805 /* NoteViewController.swift */; };
+		62D98BBA22CE46B700BC7805 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D98BB722CE46B700BC7805 /* NoteView.swift */; };
 		62E79C5322CDF67E006969F3 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E79C5122CDF67E006969F3 /* NoteTableViewCell.swift */; };
 		62E79C5422CDF67E006969F3 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E79C5222CDF67E006969F3 /* NoteTableViewCell.xib */; };
 		62E79C5C22CDFFA1006969F3 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E79C5B22CDFFA1006969F3 /* Configurable.swift */; };
@@ -54,6 +57,9 @@
 		629B497B22CD291600F13CA1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		629B497D22CD3DBA00F13CA1 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		62D98BB522CE46B700BC7805 /* NoteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoteViewController.storyboard; sourceTree = "<group>"; };
+		62D98BB622CE46B700BC7805 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		62D98BB722CE46B700BC7805 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		62E79C5122CDF67E006969F3 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		62E79C5222CDF67E006969F3 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		62E79C5B22CDFFA1006969F3 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		629B496022CD023700F13CA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				62D98BB422CE469E00BC7805 /* NoteViewController */,
 				62E79C4222CDF0DA006969F3 /* BaseClasses */,
 				629B496C22CD11E500F13CA1 /* FoldersViewController */,
 				629B496D22CD11FD00F13CA1 /* NotesViewController */,
@@ -204,6 +211,16 @@
 				629B497022CD148E00F13CA1 /* FolderTableViewCell.xib */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		62D98BB422CE469E00BC7805 /* NoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				62D98BB522CE46B700BC7805 /* NoteViewController.storyboard */,
+				62D98BB622CE46B700BC7805 /* NoteViewController.swift */,
+				62D98BB722CE46B700BC7805 /* NoteView.swift */,
+			);
+			path = NoteViewController;
 			sourceTree = "<group>";
 		};
 		62E79C4222CDF0DA006969F3 /* BaseClasses */ = {
@@ -286,6 +303,7 @@
 				62FE274022CE1ADE00115F90 /* BaseTableView.xib in Resources */,
 				62E79C5422CDF67E006969F3 /* NoteTableViewCell.xib in Resources */,
 				629B495122CD010C00F13CA1 /* LaunchScreen.storyboard in Resources */,
+				62D98BB822CE46B700BC7805 /* NoteViewController.storyboard in Resources */,
 				629B494E22CD010C00F13CA1 /* Assets.xcassets in Resources */,
 				629B497222CD148E00F13CA1 /* FolderTableViewCell.xib in Resources */,
 			);
@@ -303,9 +321,11 @@
 				629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */,
 				629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */,
 				62FE274622CE255C00115F90 /* FoldersViewController.swift in Sources */,
+				62D98BBA22CE46B700BC7805 /* NoteView.swift in Sources */,
 				629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */,
 				624859FE22CE0AC500B13BE9 /* BaseTableViewController.swift in Sources */,
 				629B497422CD16C300F13CA1 /* UITableView+Extensions.swift in Sources */,
+				62D98BB922CE46B700BC7805 /* NoteViewController.swift in Sources */,
 				62E79C5322CDF67E006969F3 /* NoteTableViewCell.swift in Sources */,
 				629B496B22CD056500F13CA1 /* RootViewGettable.swift in Sources */,
 				62485A0922CE187400B13BE9 /* NotesTableViewController.swift in Sources */,

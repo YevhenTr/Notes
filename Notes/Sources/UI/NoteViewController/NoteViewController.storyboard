@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Note View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="NoteViewController" id="BYZ-38-t0r" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="NoteView" customModule="Notes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04 july 2019, 18:46" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2W-hy-yeg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="70"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ZA1-Wk-5Xe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-Is-Pcy">
+                                <rect key="frame" x="0.0" y="114" width="414" height="738"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-XJ-LeA">
+                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aYb-pb-4pb"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="hWs-7V-lub"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WVF-XJ-LeA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2a0-bh-sQj"/>
+                            <constraint firstAttribute="bottom" secondItem="WVF-XJ-LeA" secondAttribute="bottom" id="42h-KG-0rw"/>
+                            <constraint firstItem="5rm-Is-Pcy" firstAttribute="top" secondItem="N2W-hy-yeg" secondAttribute="bottom" id="9r7-4b-0ms"/>
+                            <constraint firstItem="WVF-XJ-LeA" firstAttribute="top" secondItem="5rm-Is-Pcy" secondAttribute="bottom" id="CxJ-nw-E5T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N2W-hy-yeg" secondAttribute="trailing" id="UrV-ba-E63"/>
+                            <constraint firstItem="5rm-Is-Pcy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dpf-4W-Rpp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5rm-Is-Pcy" secondAttribute="trailing" id="gLA-5B-Pyi"/>
+                            <constraint firstAttribute="trailing" secondItem="WVF-XJ-LeA" secondAttribute="trailing" id="jqo-PX-Ta0"/>
+                            <constraint firstItem="N2W-hy-yeg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mFf-dM-IsE"/>
+                            <constraint firstItem="N2W-hy-yeg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nRl-SE-nK9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="contentTextView" destination="5rm-Is-Pcy" id="z6P-Wn-ayM"/>
+                            <outlet property="headerLabel" destination="N2W-hy-yeg" id="i7I-f3-iXg"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+</document>
