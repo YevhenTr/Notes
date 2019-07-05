@@ -13,4 +13,17 @@ extension Optional {
     func `do`(_ action:(Wrapped) -> ()) {
         self.map(action)
     }
+    
+    public var isNone: Bool {
+        get {
+            switch self {
+            case .none: return true
+            case .some: return false
+            }
+        }
+    }
+    
+    public var isSome: Bool {
+        get { return !self.isNone }
+    }
 }
