@@ -11,19 +11,23 @@ import RealmSwift
 
 extension Realm {
     
+    //  MARK: Subtypes
+    
     private struct Path {
-        static let project = "/Users/student/Documents/Weather/Weather"
+        static let project = "/Users/yevhentriukhan/Documents/Playground/Notes/Notes"
         static let filename = "/default.realm"
         static let realm = Path.project + "/Realm" + Path.filename
         
     }
     
-    public static var projectFolderConfiguration: Realm.Configuration {
-        return Configuration(fileURL: URL(string: Path.realm))
+    private struct Key {
+        static let realmThread = "com.thread.realm.notes"
     }
     
-    private struct Key {
-        static let realmThread = "com.thread.realm.weather"
+    //  MARK: Properties
+    
+    public static var projectFolderConfiguration: Realm.Configuration {
+        return Configuration(fileURL: URL(string: Path.realm))
     }
     
     public static var current: Realm? {
@@ -32,17 +36,16 @@ extension Realm {
         
         return thread.threadDictionary[key]
             .flatMap { $0 as? WeakBox<Realm> }
-            .flatMap { $0.wrapped }
-            ?? {
+            .flatMap { $0.wrapped } ?? {
                 (try? Realm()).map {
                     thread.threadDictionary[key] = WeakBox($0)
                    
                     return $0
                 }
-//                    side { thread.threadDictionary[key] = WeakBox($0) }
-                
-        }()
+            }()
     }
+    
+    //  MARK: Methods
     
     public static func writeOperation(_ action: (Realm) -> ()) {
         self.current.do { $0.writeOperation(action) }

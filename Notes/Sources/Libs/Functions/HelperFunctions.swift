@@ -21,6 +21,5 @@ public func side<Value>(_ value: Value, action: @escaping (inout Value) -> ()) -
 
 public func side<Value>(action: @escaping (inout Value) -> ()) -> (Value) -> (Value) {
     
-    
     return { side($0, action: action) }
 }

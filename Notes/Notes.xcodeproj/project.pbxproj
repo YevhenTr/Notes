@@ -15,6 +15,7 @@
 		625D504D22CE698F00729520 /* Realm+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D504C22CE698F00729520 /* Realm+Extensions.swift */; };
 		625D505022CE6A8F00729520 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D504F22CE6A8F00729520 /* WeakBox.swift */; };
 		625D505322CE6C3400729520 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D505222CE6C3400729520 /* HelperFunctions.swift */; };
+		62720ED922D0E69E00A28718 /* KeyboardNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720ED822D0E69E00A28718 /* KeyboardNotificationsService.swift */; };
 		629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B494622CD010B00F13CA1 /* AppDelegate.swift */; };
 		629B494E22CD010C00F13CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629B494D22CD010C00F13CA1 /* Assets.xcassets */; };
 		629B495122CD010C00F13CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629B494F22CD010C00F13CA1 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		625D504C22CE698F00729520 /* Realm+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+Extensions.swift"; sourceTree = "<group>"; };
 		625D504F22CE6A8F00729520 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
 		625D505222CE6C3400729520 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		62720ED822D0E69E00A28718 /* KeyboardNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsService.swift; sourceTree = "<group>"; };
 		629B494322CD010B00F13CA1 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629B494622CD010B00F13CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629B494D22CD010C00F13CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		629B495D22CD021200F13CA1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				62E79C4222CDF0DA006969F3 /* BaseClasses */,
 				625D505122CE6C0D00729520 /* Functions */,
 				625D504E22CE6A6B00729520 /* Types */,
 				629B495C22CD020100F13CA1 /* Extensions */,
@@ -194,6 +197,7 @@
 		629B495E22CD022700F13CA1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				62720ED822D0E69E00A28718 /* KeyboardNotificationsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				62D98BB422CE469E00BC7805 /* NoteViewController */,
-				62E79C4222CDF0DA006969F3 /* BaseClasses */,
 				629B496C22CD11E500F13CA1 /* FoldersViewController */,
 				629B496D22CD11FD00F13CA1 /* NotesViewController */,
 			);
@@ -421,6 +424,7 @@
 				62485A0122CE119900B13BE9 /* NibDesignable.swift in Sources */,
 				629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */,
 				629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */,
+				62720ED922D0E69E00A28718 /* KeyboardNotificationsService.swift in Sources */,
 				62FE274622CE255C00115F90 /* FoldersViewController.swift in Sources */,
 				62D98BBA22CE46B700BC7805 /* NoteView.swift in Sources */,
 				629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */,
