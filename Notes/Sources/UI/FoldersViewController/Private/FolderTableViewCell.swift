@@ -10,13 +10,14 @@ import UIKit
 
 class FolderTableViewCell: UITableViewCell {
 
+    @IBOutlet var nameLabel: UILabel?
 }
 
 extension FolderTableViewCell: Configurable {
     
     func configure(with model: Any) {
         if let model = model as? Folder {
-            self.textLabel?.text = model.name
+            self.nameLabel?.text = model.name
         }
     }
 }

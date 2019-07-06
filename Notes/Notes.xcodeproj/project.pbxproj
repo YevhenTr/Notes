@@ -16,6 +16,8 @@
 		625D505022CE6A8F00729520 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D504F22CE6A8F00729520 /* WeakBox.swift */; };
 		625D505322CE6C3400729520 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D505222CE6C3400729520 /* HelperFunctions.swift */; };
 		62720ED922D0E69E00A28718 /* KeyboardNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720ED822D0E69E00A28718 /* KeyboardNotificationsService.swift */; };
+		62720EDF22D0EEA800A28718 /* AppConstants+Folders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720EDE22D0EEA800A28718 /* AppConstants+Folders.swift */; };
+		62720EE322D0EFF100A28718 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720EE222D0EFF100A28718 /* AppConstants.swift */; };
 		629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B494622CD010B00F13CA1 /* AppDelegate.swift */; };
 		629B494E22CD010C00F13CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629B494D22CD010C00F13CA1 /* Assets.xcassets */; };
 		629B495122CD010C00F13CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629B494F22CD010C00F13CA1 /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 		625D504F22CE6A8F00729520 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
 		625D505222CE6C3400729520 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		62720ED822D0E69E00A28718 /* KeyboardNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsService.swift; sourceTree = "<group>"; };
+		62720EDE22D0EEA800A28718 /* AppConstants+Folders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConstants+Folders.swift"; sourceTree = "<group>"; };
+		62720EE222D0EFF100A28718 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		629B494322CD010B00F13CA1 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629B494622CD010B00F13CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629B494D22CD010C00F13CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +119,23 @@
 				625D505222CE6C3400729520 /* HelperFunctions.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		62720EDC22D0EE5900A28718 /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				62720EE222D0EFF100A28718 /* AppConstants.swift */,
+				62720EE122D0EF3800A28718 /* AppTextConstants */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
+		62720EE122D0EF3800A28718 /* AppTextConstants */ = {
+			isa = PBXGroup;
+			children = (
+				62720EDE22D0EEA800A28718 /* AppConstants+Folders.swift */,
+			);
+			path = AppTextConstants;
 			sourceTree = "<group>";
 		};
 		629B493A22CD010B00F13CA1 = {
@@ -186,6 +207,7 @@
 		629B495D22CD021200F13CA1 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				62720EDC22D0EE5900A28718 /* AppConstants */,
 				62E79C4222CDF0DA006969F3 /* BaseClasses */,
 				625D505122CE6C0D00729520 /* Functions */,
 				625D504E22CE6A6B00729520 /* Types */,
@@ -212,9 +234,9 @@
 		629B496022CD023700F13CA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				62D98BB422CE469E00BC7805 /* NoteViewController */,
 				629B496C22CD11E500F13CA1 /* FoldersViewController */,
 				629B496D22CD11FD00F13CA1 /* NotesViewController */,
+				62D98BB422CE469E00BC7805 /* NoteViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -422,6 +444,7 @@
 				629B496322CD033B00F13CA1 /* StoryboardLoadable.swift in Sources */,
 				625D504D22CE698F00729520 /* Realm+Extensions.swift in Sources */,
 				62485A0122CE119900B13BE9 /* NibDesignable.swift in Sources */,
+				62720EDF22D0EEA800A28718 /* AppConstants+Folders.swift in Sources */,
 				629B497E22CD3DBA00F13CA1 /* Optional+Extensions.swift in Sources */,
 				629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */,
 				62720ED922D0E69E00A28718 /* KeyboardNotificationsService.swift in Sources */,
@@ -437,6 +460,7 @@
 				62485A0922CE187400B13BE9 /* NotesTableViewController.swift in Sources */,
 				62E79C5E22CE04AE006969F3 /* Substring+Extensions.swift in Sources */,
 				629B497622CD1A9700F13CA1 /* UINib+Extensions.swift in Sources */,
+				62720EE322D0EFF100A28718 /* AppConstants.swift in Sources */,
 				625D505322CE6C3400729520 /* HelperFunctions.swift in Sources */,
 				629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */,
 				629B497C22CD291600F13CA1 /* Note.swift in Sources */,

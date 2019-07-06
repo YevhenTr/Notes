@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Note {
+class Note: Hashable {
     
     //  MARK: Properties
     
@@ -20,5 +20,17 @@ class Note {
     init(content: String) {
         self.content = content
         self.timestamp = Date()
+    }
+    
+    //  MARK: - Equatable
+    
+    static func == (lhs: Note, rhs: Note) -> Bool {
+        return lhs.timestamp == rhs.timestamp
+    }
+    
+    //  MARK: - Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(timestamp)
     }
 }

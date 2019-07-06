@@ -10,18 +10,18 @@ import Foundation
 
 class WeakBox<Wrapped: AnyObject>: Equatable {
     
-    // MARK: - Properties
+    //  MARK: - Properties
 
     public var isEmpty: Bool { return self.wrapped.isNone }
     private(set) weak var wrapped: Wrapped?
     
-    // MARK: - Init and Deinit
+    //  MARK: - Init and Deinit
     
     init(_ strongObject: Wrapped) {
         self.wrapped = strongObject
     }
     
-    // MARK: - Equatable
+    //  MARK: - Equatable
     
     static func == (lhs: WeakBox, rhs: WeakBox) -> Bool {
         if
