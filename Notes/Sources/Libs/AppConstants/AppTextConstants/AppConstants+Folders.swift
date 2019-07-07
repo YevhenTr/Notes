@@ -11,6 +11,7 @@ import Foundation
 extension AppConstants {
     
     struct Folders {
+        
         static let navigationTitle = "Folders"
         static let addButtonTitle = "New Folder"
         
