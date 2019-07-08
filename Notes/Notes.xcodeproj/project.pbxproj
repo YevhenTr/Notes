@@ -20,6 +20,13 @@
 		62720EE322D0EFF100A28718 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720EE222D0EFF100A28718 /* AppConstants.swift */; };
 		62720EE722D125E200A28718 /* AppConstants+Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720EE622D125E200A28718 /* AppConstants+Notes.swift */; };
 		62720EE922D252B200A28718 /* TouchableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62720EE822D252B200A28718 /* TouchableTextView.swift */; };
+		6296067722D3719100DD5F32 /* RLMFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296067622D3719100DD5F32 /* RLMFolder.swift */; };
+		6296067922D3723100DD5F32 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296067822D3723100DD5F32 /* StorageProtocol.swift */; };
+		6296067B22D375CA00DD5F32 /* FolderStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296067A22D375CA00DD5F32 /* FolderStorageProtocol.swift */; };
+		6296067D22D3763600DD5F32 /* BaseStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296067C22D3763600DD5F32 /* BaseStorageRealm.swift */; };
+		6296067F22D3789100DD5F32 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296067E22D3789100DD5F32 /* Sequence+Extensions.swift */; };
+		6296068122D38E7E00DD5F32 /* BaseRLMObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296068022D38E7E00DD5F32 /* BaseRLMObject.swift */; };
+		6296068322D3A8F900DD5F32 /* FolderStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6296068222D3A8F900DD5F32 /* FolderStorage.swift */; };
 		629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629B494622CD010B00F13CA1 /* AppDelegate.swift */; };
 		629B494E22CD010C00F13CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629B494D22CD010C00F13CA1 /* Assets.xcassets */; };
 		629B495122CD010C00F13CA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629B494F22CD010C00F13CA1 /* LaunchScreen.storyboard */; };
@@ -58,6 +65,13 @@
 		62720EE222D0EFF100A28718 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		62720EE622D125E200A28718 /* AppConstants+Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConstants+Notes.swift"; sourceTree = "<group>"; };
 		62720EE822D252B200A28718 /* TouchableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableTextView.swift; sourceTree = "<group>"; };
+		6296067622D3719100DD5F32 /* RLMFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMFolder.swift; sourceTree = "<group>"; };
+		6296067822D3723100DD5F32 /* StorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
+		6296067A22D375CA00DD5F32 /* FolderStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderStorageProtocol.swift; sourceTree = "<group>"; };
+		6296067C22D3763600DD5F32 /* BaseStorageRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStorageRealm.swift; sourceTree = "<group>"; };
+		6296067E22D3789100DD5F32 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		6296068022D38E7E00DD5F32 /* BaseRLMObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRLMObject.swift; sourceTree = "<group>"; };
+		6296068222D3A8F900DD5F32 /* FolderStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderStorage.swift; sourceTree = "<group>"; };
 		629B494322CD010B00F13CA1 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629B494622CD010B00F13CA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		629B494D22CD010C00F13CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +128,7 @@
 			children = (
 				625D504F22CE6A8F00729520 /* WeakBox.swift */,
 				62720EE822D252B200A28718 /* TouchableTextView.swift */,
+				6296068222D3A8F900DD5F32 /* FolderStorage.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 			children = (
 				629B497922CD1DAE00F13CA1 /* Folder.swift */,
 				629B497B22CD291600F13CA1 /* Note.swift */,
+				6296067622D3719100DD5F32 /* RLMFolder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +222,7 @@
 				629B497F22CD3F1D00F13CA1 /* UIViewController+Extensions.swift */,
 				62E79C5D22CE04AE006969F3 /* Substring+Extensions.swift */,
 				625D504C22CE698F00729520 /* Realm+Extensions.swift */,
+				6296067E22D3789100DD5F32 /* Sequence+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +271,8 @@
 				629B496A22CD056500F13CA1 /* RootViewGettable.swift */,
 				62E79C5B22CDFFA1006969F3 /* Configurable.swift */,
 				62485A0022CE119900B13BE9 /* NibDesignable.swift */,
+				6296067822D3723100DD5F32 /* StorageProtocol.swift */,
+				6296067A22D375CA00DD5F32 /* FolderStorageProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -301,6 +320,8 @@
 				624859FB22CE0AC500B13BE9 /* BaseTableViewController.swift */,
 				624859FC22CE0AC500B13BE9 /* BaseTableView.swift */,
 				62FE273F22CE1ADE00115F90 /* BaseTableView.xib */,
+				6296067C22D3763600DD5F32 /* BaseStorageRealm.swift */,
+				6296068022D38E7E00DD5F32 /* BaseRLMObject.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -455,11 +476,15 @@
 				62720EE922D252B200A28718 /* TouchableTextView.swift in Sources */,
 				629B498022CD3F1D00F13CA1 /* UIViewController+Extensions.swift in Sources */,
 				62720ED922D0E69E00A28718 /* KeyboardNotificationsService.swift in Sources */,
+				6296067F22D3789100DD5F32 /* Sequence+Extensions.swift in Sources */,
 				62FE274622CE255C00115F90 /* FoldersViewController.swift in Sources */,
+				6296068122D38E7E00DD5F32 /* BaseRLMObject.swift in Sources */,
 				62D98BBA22CE46B700BC7805 /* NoteView.swift in Sources */,
 				629B497A22CD1DAE00F13CA1 /* Folder.swift in Sources */,
+				6296067922D3723100DD5F32 /* StorageProtocol.swift in Sources */,
 				624859FE22CE0AC500B13BE9 /* BaseTableViewController.swift in Sources */,
 				629B497422CD16C300F13CA1 /* UITableView+Extensions.swift in Sources */,
+				6296067722D3719100DD5F32 /* RLMFolder.swift in Sources */,
 				62D98BB922CE46B700BC7805 /* NoteViewController.swift in Sources */,
 				625D505022CE6A8F00729520 /* WeakBox.swift in Sources */,
 				62E79C5322CDF67E006969F3 /* NoteTableViewCell.swift in Sources */,
@@ -469,13 +494,16 @@
 				62E79C5E22CE04AE006969F3 /* Substring+Extensions.swift in Sources */,
 				629B497622CD1A9700F13CA1 /* UINib+Extensions.swift in Sources */,
 				62720EE322D0EFF100A28718 /* AppConstants.swift in Sources */,
+				6296067D22D3763600DD5F32 /* BaseStorageRealm.swift in Sources */,
 				625D505322CE6C3400729520 /* HelperFunctions.swift in Sources */,
+				6296067B22D375CA00DD5F32 /* FolderStorageProtocol.swift in Sources */,
 				629B494722CD010B00F13CA1 /* AppDelegate.swift in Sources */,
 				629B497C22CD291600F13CA1 /* Note.swift in Sources */,
 				629B497822CD1AC500F13CA1 /* UIVIew+Extensions.swift in Sources */,
 				624859FF22CE0AC500B13BE9 /* BaseTableView.swift in Sources */,
 				62E79C5C22CDFFA1006969F3 /* Configurable.swift in Sources */,
 				629B497122CD148E00F13CA1 /* FolderTableViewCell.swift in Sources */,
+				6296068322D3A8F900DD5F32 /* FolderStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

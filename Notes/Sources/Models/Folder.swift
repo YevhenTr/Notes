@@ -18,9 +18,9 @@ class Folder: Hashable {
     
     //  MARK: Init and deinit
     
-    init(name: String) {
+    init(name: String, timestamp: Date = Date()) {
         self.name = name
-        self.timestamp = Date()
+        self.timestamp = timestamp
     }
     
     //  MARK: Equatable
@@ -36,3 +36,9 @@ class Folder: Hashable {
     }
 }
 
+extension Folder {
+    
+    func asRealmObject() -> RLMFolder {
+        return RLMFolder(name: self.name, timestamp: self.timestamp)
+    }
+}
