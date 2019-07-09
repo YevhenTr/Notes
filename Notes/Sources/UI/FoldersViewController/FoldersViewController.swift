@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class FoldersViewController: BaseTableViewController<Folder, FolderTableViewCell> {
+class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, FolderTableViewCell> {
     
     //  MARK: Subtypes
     
@@ -18,7 +19,7 @@ class FoldersViewController: BaseTableViewController<Folder, FolderTableViewCell
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.storage = FolderStorage()
         self.setupUI()
     }
     
@@ -31,7 +32,7 @@ class FoldersViewController: BaseTableViewController<Folder, FolderTableViewCell
         self.addAction = { [weak self] in
             let cancel = UIAlertAction(title: AppConstants.cancel, style: .cancel)
             let onPhone = UIAlertAction(title: Strings.onPhone, style: .default) { _ in
-                guard let count = self?.model.count else { return }
+                guard let count = self?.model?.count else { return }
                 
                 self?.createFolder(at: (IndexPath(row: count, section: 0)))
             }
@@ -42,22 +43,28 @@ class FoldersViewController: BaseTableViewController<Folder, FolderTableViewCell
         }
         
         self.selectAction = { [weak self] folder in
-            let controller = NotesTableViewController.create()
+            let controller = NotesTableViewController.create(storage: NoteStorage())
             
             controller.navigationItem.title = folder.name
             self?.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        self.deleteAction = { [weak self] folder in
+            self?.storage?.delete(folder: folder)
         }
     }
     
     private func createFolder(at indexPath: IndexPath) {
         self.requestFolderName() { [weak self] newFolderName in
-            let isNameTaken = self?.model.contains(where: { $0.name == newFolderName }) ?? true
+            let isNameTaken = self?.model?.contains(where: { $0.name == newFolderName }) ?? true
             
             if isNameTaken {
                 self?.showAlert(title: Strings.warningTitle, message: Strings.warningMessage)
             } else {
-                self?.model.append(Folder(name: newFolderName))
-                self?.rootView?.mainTableView?.insertRows(at: [indexPath], with: .left)
+                let folder = RLMFolder(name: newFolderName)
+                self?.storage?.save(folder: folder)
+                self?.rootView?.mainTableView?.reloadData()
+//                self?.rootView?.mainTableView?.insertRows(at: [indexPath], with: .left)
             }
         }
     }

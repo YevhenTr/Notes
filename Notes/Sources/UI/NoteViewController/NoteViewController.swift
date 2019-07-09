@@ -16,11 +16,11 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
     
     //  MARK: Properties
 
-    private var model: Note?
+    private var model: RLMNote?
     
     //  MARK: Class methods
 
-    static func create(with model: Note) -> NoteViewController {
+    static func create(with model: RLMNote) -> NoteViewController {
         let controller = NoteViewController.loadFromStoryboard()
         controller.model = model
         

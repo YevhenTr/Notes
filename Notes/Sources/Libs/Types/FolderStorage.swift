@@ -8,23 +8,22 @@
 
 import RealmSwift
 
-class FolderStarage: BaseStorageRealm, FolderStorageProtocol {
-    func loadAllFolders() -> [Folder]? {
+class FolderStorage: BaseStorageRealm, FolderStorageProtocol {
+    
+    func loadAllFolders() -> [RLMFolder]? {
         return self.readObjects(type: RLMFolder.self)?
-            .asArray()
-            .map { $0.asFolder() }
             .sorted(by: { $0.timestamp < $1.timestamp})
     }
     
-    func loadFolder(name: String) -> Folder? {
-        return (self.readObject(id: name) as? RLMFolder)?.asFolder()
+    func loadFolder(name: String) -> RLMFolder? {
+        return (self.readObject(id: name) as? RLMFolder)
     }
     
-    func save(folder: Folder) {
-        self.save(object: folder.asRealmObject())
+    func save(folder: RLMFolder) {
+        self.save(object: folder)
     }
     
-    func delete(folder: Folder) {
-        self.deleteObject(id: folder.name)
+    func delete(folder: RLMFolder) {
+        self.deleteObject(id: folder.id, type: RLMFolder.self)
     }
 }

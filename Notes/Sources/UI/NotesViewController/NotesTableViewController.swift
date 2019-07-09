@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesTableViewController: BaseTableViewController<Note, NoteTableViewCell> {
+class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, NoteTableViewCell> {
     
     //  MARK:  Subtypes
     
@@ -23,7 +23,7 @@ class NotesTableViewController: BaseTableViewController<Note, NoteTableViewCell>
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.model.append(Note(content: "content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content "))
+//        self.model.append(Note(content: "content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content "))
         self.rootView?.mainTableView?.reloadData()
 
         self.setupUI()
@@ -38,7 +38,7 @@ class NotesTableViewController: BaseTableViewController<Note, NoteTableViewCell>
         rootView?.addButton?.title = Strings.addButtonTitle
         
         self.addAction = { [weak self] in
-            self?.selectAction?(Note(content: ""))
+            self?.selectAction?(RLMNote(content: "test test test test test test test test ", timestamp: Date()))
         }
         
         self.selectAction = { [weak self] note in

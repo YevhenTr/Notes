@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-@objcMembers public class BaseRLMObject: Object {
+@objcMembers public class BaseRLMObject: Object, Identifiable {
     
     //  MARK: - Subtypes
 

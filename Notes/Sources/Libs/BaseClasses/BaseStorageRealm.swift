@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-public class BaseStorageRealm: StorageProtocol {
+class BaseStorageRealm: StorageProtocol {
     
     public typealias Invalidatable = NotificationToken
     public typealias RealmObject = RealmSwift.Object
@@ -48,7 +48,6 @@ public class BaseStorageRealm: StorageProtocol {
     }
     
     public func readObjects<T: RealmObject>(type: T.Type) -> [T]? {
-        let a = self.realm?.objects(T.self)
         return self.realm?.objects(T.self).array
     }
     
@@ -57,9 +56,9 @@ public class BaseStorageRealm: StorageProtocol {
     }
     
     //  delete
-    public func deleteObject(id: String) {
+    public func deleteObject<T: RealmObject>(id: String, type: T.Type) {
         self.realm?.writeOperation {
-            if let object = self.readObject(id: id) {
+            if let object: T = self.readObject(id: id) {
                 $0.delete(object)
             }
         }

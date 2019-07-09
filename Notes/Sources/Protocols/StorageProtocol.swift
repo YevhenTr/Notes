@@ -6,9 +6,7 @@
 //  Copyright © 2019 Yevhen Triukhan. All rights reserved.
 //
 
-import Foundation
-
-public protocol StorageProtocol {
+protocol StorageProtocol {
     
     associatedtype Value
     
@@ -23,7 +21,7 @@ public protocol StorageProtocol {
     func readObjects(type: Value.Type) -> [Value]?
     
     //  D
-    func deleteObject(id: String)
+    func deleteObject(id: String, type: Value.Type)
     
     func deleteObjects(type: Value.Type)
 }

@@ -34,7 +34,7 @@ class NoteTableViewCell: UITableViewCell {
 extension NoteTableViewCell: Configurable {
     
     func configure(with model: Any) {
-        if let model = model as? Note {
+        if let model = model as? RLMNote {
             self.dateLabel?.text = model.timestamp.description
             self.contentTextView?.text = model.content
         }

@@ -8,10 +8,9 @@
 
 protocol FolderStorageProtocol {
     
-    func loadAllFolders() -> [Folder]?
-    func loadFolder(name: String) -> Folder?
+    func loadAllFolders() -> [RLMFolder]?
+    func loadFolder(name: String) -> RLMFolder?
     
-    func save(folder: Folder)
-    func delete(folder: Folder)
+    func save(folder: RLMFolder)
+    func delete(folder: RLMFolder)
 }
-
