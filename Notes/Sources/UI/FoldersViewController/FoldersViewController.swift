@@ -19,13 +19,14 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.storage = FolderStorage()
-        self.setupUI()
+
     }
     
     //  MARK: Private API
     
-    private func setupUI() {
+    override func setupUI() {
+        super.setupUI()
+        
         self.navigationItem.title = Strings.navigationTitle
         self.rootView?.addButton?.title = Strings.addButtonTitle
         
@@ -63,7 +64,7 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
             } else {
                 let folder = RLMFolder(name: newFolderName)
                 self?.storage?.save(folder: folder)
-                self?.rootView?.mainTableView?.reloadData()
+                self?.reloadData()
 //                self?.rootView?.mainTableView?.insertRows(at: [indexPath], with: .left)
             }
         }

@@ -15,20 +15,23 @@ import RealmSwift
     
     enum Property: String {
         case content
+        case folder
         case timestame
     }
     
     //  MARK: - Properties
     
     public dynamic var content: String = ""
+    public dynamic var folder: String = ""
     public var timestamp: Date = Date()
     
     //  MARK: - Init and Deinit
     
-    convenience init(content: String, timestamp: Date = Date()) {
+    convenience init(content: String, folder: String, timestamp: Date = Date()) {
         self.init(id: timestamp.description)
         
         self.content = content
+        self.folder = folder
         self.timestamp = timestamp
     }
 }

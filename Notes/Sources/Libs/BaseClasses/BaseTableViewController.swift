@@ -49,6 +49,12 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         self.setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.reloadData()
+    }
+    
     //  MARK: Public API
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -58,9 +64,11 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         self.rootView?.addButton?.isEnabled = !editing
     }
     
-    //  MARK: Private API
+    func reloadData() {
+        self.rootView?.mainTableView?.reloadData()
+    }
     
-    private func setupUI() {
+    func setupUI() {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -90,7 +98,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         case .delete:
             self.model?.objectAtIndex(indexPath.row).do { self.deleteAction?($0) }
 //            self.rootView?.mainTableView?.deleteRows(at: [indexPath], with: .left)
-            self.rootView?.mainTableView?.reloadData()
+            self.reloadData()
         default:
             break
         }

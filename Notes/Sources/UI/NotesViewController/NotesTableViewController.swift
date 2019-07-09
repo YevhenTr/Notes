@@ -22,23 +22,25 @@ class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, No
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.model.append(Note(content: "content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content "))
-        self.rootView?.mainTableView?.reloadData()
 
-        self.setupUI()
     }
     
-    //  MARK: - Private API
+    //  MARK: - Public API
     
-    private func setupUI() {
+    override func setupUI() {
+        super.setupUI()
+        
         let rootView = self.rootView
         
         rootView?.mainTableView?.rowHeight = Constants.defaultRowHeight
         rootView?.addButton?.title = Strings.addButtonTitle
         
         self.addAction = { [weak self] in
-            self?.selectAction?(RLMNote(content: "test test test test test test test test ", timestamp: Date()))
+//            self?.selectAction?(RLMNote(content: "test test test test test test test test ", timestamp: Date()))
+            guard let folderName = self?.navigationItem.title else { return }
+            let controller = NoteViewController.create(with: RLMNote(content: "", folder: folderName))
+            self?.navigationController?.pushViewController(controller, animated: true)
+
         }
         
         self.selectAction = { [weak self] note in
