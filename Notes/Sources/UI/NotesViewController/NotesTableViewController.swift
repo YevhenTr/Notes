@@ -18,7 +18,13 @@ class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, No
     
     typealias Strings = AppConstants.Notes
     
-    //  MARK: View Lifecycle
+    //  MARK: - Properties
+    
+    override var model: [RLMNote]? {
+        return self.storage?.loadNotes(folderName: self.navigationItem.title!)
+    }
+    
+    //  MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

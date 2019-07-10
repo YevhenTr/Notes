@@ -6,6 +6,8 @@
 //  Copyright © 2019 Yevhen Triukhan. All rights reserved.
 //
 
+import Foundation
+
 class NoteStorage: BaseStorageRealm, NoteStorageProtocol {
     
     func loadAllNotes() -> [RLMNote]? {
@@ -15,6 +17,10 @@ class NoteStorage: BaseStorageRealm, NoteStorageProtocol {
     
     func loadNote(id: String) -> RLMNote? {
         return (self.readObject(id: id) as? RLMNote)
+    }
+    
+    func loadNotes(folderName: String) -> [RLMNote]? {
+        return self.readObjects(where: NSPredicate(format: "folder == %@", folderName))
     }
     
     func save(note: RLMNote) {

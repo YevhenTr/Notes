@@ -55,6 +55,10 @@ class BaseStorageRealm: StorageProtocol {
         return nil
     }
     
+    public func readObjects<T: RealmObject>(where predicate: NSPredicate) -> [T]? {
+        return self.realm?.objects(T.self).filter(predicate).array
+    }
+    
     //  delete
     public func deleteObject<T: RealmObject>(id: String, type: T.Type) {
         self.realm?.writeOperation {
