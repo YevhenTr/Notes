@@ -33,13 +33,13 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
         super.viewDidLoad()
         
         self.setupUI()
-        self.rootView?.contentTextView?.becomeFirstResponder()
     }
     
     //  MARK: Private API
     
     private func setupUI() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.onDone))
+        self.rootView?.setupView(model: self.model)
     }
     
     @objc private func onDone(_ sender: UIBarButtonItem) {

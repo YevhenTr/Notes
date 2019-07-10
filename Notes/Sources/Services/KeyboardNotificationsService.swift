@@ -29,6 +29,7 @@ final class KeyboardNotificationsService {
     // MARK: - Initialization and Deallocation
     
     deinit {
+        print("deinit")
         self.notifications.forEach {
             NotificationCenter.default.removeObserver(self, name: $0, object: nil)
         }

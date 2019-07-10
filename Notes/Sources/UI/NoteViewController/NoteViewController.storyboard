@@ -29,14 +29,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-Is-Pcy">
-                                <rect key="frame" x="0.0" y="114" width="414" height="738"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <rect key="frame" x="24" y="114" width="366" height="682"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-XJ-LeA">
-                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="aYb-pb-4pb"/>
                                 </constraints>
@@ -48,18 +47,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WVF-XJ-LeA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2a0-bh-sQj"/>
-                            <constraint firstAttribute="bottom" secondItem="WVF-XJ-LeA" secondAttribute="bottom" id="42h-KG-0rw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WVF-XJ-LeA" secondAttribute="bottom" id="42h-KG-0rw"/>
                             <constraint firstItem="5rm-Is-Pcy" firstAttribute="top" secondItem="N2W-hy-yeg" secondAttribute="bottom" id="9r7-4b-0ms"/>
-                            <constraint firstItem="WVF-XJ-LeA" firstAttribute="top" secondItem="5rm-Is-Pcy" secondAttribute="bottom" id="CxJ-nw-E5T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5rm-Is-Pcy" secondAttribute="bottom" constant="66" id="CxJ-nw-E5T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N2W-hy-yeg" secondAttribute="trailing" id="UrV-ba-E63"/>
-                            <constraint firstItem="5rm-Is-Pcy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dpf-4W-Rpp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5rm-Is-Pcy" secondAttribute="trailing" id="gLA-5B-Pyi"/>
+                            <constraint firstItem="5rm-Is-Pcy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="dpf-4W-Rpp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5rm-Is-Pcy" secondAttribute="trailing" constant="24" id="gLA-5B-Pyi"/>
                             <constraint firstAttribute="trailing" secondItem="WVF-XJ-LeA" secondAttribute="trailing" id="jqo-PX-Ta0"/>
                             <constraint firstItem="N2W-hy-yeg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mFf-dM-IsE"/>
                             <constraint firstItem="N2W-hy-yeg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nRl-SE-nK9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
+                            <outlet property="contentBottomConstraint" destination="CxJ-nw-E5T" id="XYP-kl-uPJ"/>
                             <outlet property="contentTextView" destination="5rm-Is-Pcy" id="z6P-Wn-ayM"/>
                             <outlet property="headerLabel" destination="N2W-hy-yeg" id="i7I-f3-iXg"/>
                         </connections>

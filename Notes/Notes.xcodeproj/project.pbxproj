@@ -52,6 +52,8 @@
 		62FBE08A22D4B0390070DB67 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FBE08922D4B0390070DB67 /* Identifiable.swift */; };
 		62FBE08C22D4B0530070DB67 /* RealmConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FBE08B22D4B0530070DB67 /* RealmConvertible.swift */; };
 		62FBE08E22D4B44B0070DB67 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FBE08D22D4B44B0070DB67 /* Array+Extensions.swift */; };
+		62FBE09022D5025F0070DB67 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FBE08F22D5025F0070DB67 /* Date+Extensions.swift */; };
+		62FBE09222D505AC0070DB67 /* AppConstants+Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FBE09122D505AC0070DB67 /* AppConstants+Note.swift */; };
 		62FE274022CE1ADE00115F90 /* BaseTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62FE273F22CE1ADE00115F90 /* BaseTableView.xib */; };
 		62FE274622CE255C00115F90 /* FoldersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FE274322CE255C00115F90 /* FoldersViewController.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		62FBE08922D4B0390070DB67 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		62FBE08B22D4B0530070DB67 /* RealmConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConvertible.swift; sourceTree = "<group>"; };
 		62FBE08D22D4B44B0070DB67 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		62FBE08F22D5025F0070DB67 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		62FBE09122D505AC0070DB67 /* AppConstants+Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppConstants+Note.swift"; sourceTree = "<group>"; };
 		62FE273F22CE1ADE00115F90 /* BaseTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableView.xib; sourceTree = "<group>"; };
 		62FE274322CE255C00115F90 /* FoldersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersViewController.swift; sourceTree = "<group>"; };
 		745F3E27965DE8635E0474D9 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			children = (
 				62720EDE22D0EEA800A28718 /* AppConstants+Folders.swift */,
 				62720EE622D125E200A28718 /* AppConstants+Notes.swift */,
+				62FBE09122D505AC0070DB67 /* AppConstants+Note.swift */,
 			);
 			path = AppTextConstants;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				625D504C22CE698F00729520 /* Realm+Extensions.swift */,
 				6296067E22D3789100DD5F32 /* Sequence+Extensions.swift */,
 				62FBE08D22D4B44B0070DB67 /* Array+Extensions.swift */,
+				62FBE08F22D5025F0070DB67 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62FBE09022D5025F0070DB67 /* Date+Extensions.swift in Sources */,
 				629B496322CD033B00F13CA1 /* StoryboardLoadable.swift in Sources */,
 				625D504D22CE698F00729520 /* Realm+Extensions.swift in Sources */,
 				62485A0122CE119900B13BE9 /* NibDesignable.swift in Sources */,
@@ -518,6 +525,7 @@
 				629B497822CD1AC500F13CA1 /* UIVIew+Extensions.swift in Sources */,
 				624859FF22CE0AC500B13BE9 /* BaseTableView.swift in Sources */,
 				62E79C5C22CDFFA1006969F3 /* Configurable.swift in Sources */,
+				62FBE09222D505AC0070DB67 /* AppConstants+Note.swift in Sources */,
 				629B497122CD148E00F13CA1 /* FolderTableViewCell.swift in Sources */,
 				6296068322D3A8F900DD5F32 /* FolderStorage.swift in Sources */,
 			);
