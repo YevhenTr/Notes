@@ -10,14 +10,14 @@ import UIKit
 
 class BaseTableView: NibDesignable {
     
-    //  MARK: Properties
+    //  MARK: - Properties
     
     @IBOutlet var mainTableView: UITableView?
     @IBOutlet var addButton: UIBarButtonItem?
     
     var addAction: (() -> ())?
     
-    //  MARK: Public API
+    //  MARK: - Public API
     
     @IBAction func onAddButton(_ sender: UIBarButtonItem) {
         self.addAction?()

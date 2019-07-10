@@ -10,7 +10,7 @@ import UIKit
 
 class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, NoteTableViewCell> {
     
-    //  MARK:  Subtypes
+    //  MARK: - Subtypes
     
     private struct Constants {
         static let defaultRowHeight: CGFloat = 110.0

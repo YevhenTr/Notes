@@ -11,7 +11,7 @@ import RealmSwift
 
 extension Realm {
     
-    //  MARK: Subtypes
+    //  MARK: - Subtypes
     
     private struct Path {
         static let project = "/Users/yevhentriukhan/Documents/Playground/Notes/Notes"
@@ -24,7 +24,7 @@ extension Realm {
         static let realmThread = "com.thread.realm.notes"
     }
     
-    //  MARK: Properties
+    //  MARK: - Properties
     
     public static var projectFolderConfiguration: Realm.Configuration {
         return Configuration(fileURL: URL(string: Path.realm))
@@ -45,7 +45,7 @@ extension Realm {
             }()
     }
     
-    //  MARK: Methods
+    //  MARK: - Methods
     
     public static func writeOperation(_ action: (Realm) -> ()) {
         self.current.do { $0.writeOperation(action) }

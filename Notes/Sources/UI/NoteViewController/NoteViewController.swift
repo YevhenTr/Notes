@@ -10,16 +10,16 @@ import UIKit
 
 class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable {
     
-    //  MARK: Subtypes
+    //  MARK: - Subtypes
 
     typealias RootView = NoteView
     
-    //  MARK: Properties
+    //  MARK: - Properties
 
     private var model: RLMNote?
     private let storage = NoteStorage()
     
-    //  MARK: Class methods
+    //  MARK: - Class methods
 
     static func create(with model: RLMNote) -> NoteViewController {
         let controller = NoteViewController.loadFromStoryboard()
@@ -28,7 +28,7 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
         return controller
     }
     
-    //  MARK: View Lifecycle
+    //  MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
         self.setupUI()
     }
     
-    //  MARK: Private API
+    //  MARK: - Private API
     
     private func setupUI() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.onDone))

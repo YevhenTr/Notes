@@ -10,7 +10,7 @@ import UIKit
 
 class NoteView: UIView {
     
-    //  MARK: Subtypes
+    //  MARK: - Subtypes
     
     typealias Strings = AppConstants.Note
     

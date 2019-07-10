@@ -11,18 +11,18 @@ import RealmSwift
 
 class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, FolderTableViewCell> {
     
-    //  MARK: Subtypes
+    //  MARK: - Subtypes
     
     typealias Strings = AppConstants.Folders
     
-    //  MARK: View Lifecycle
+    //  MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
-    //  MARK: Private API
+    //  MARK: - Private API
     
     override func setupUI() {
         super.setupUI()

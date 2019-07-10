@@ -11,11 +11,11 @@ import RealmSwift
 
 class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStorageRealm, Cell: UITableViewCell & Configurable>: UIViewController, StoryboardLoadable, RootViewGettable, UITableViewDelegate, UITableViewDataSource {
     
-    //  MARK: Subtypes
+    //  MARK: - Subtypes
     
     typealias RootView = BaseTableView
     
-    //  MARK: Properties
+    //  MARK: - Properties
     var storage: Storage?
     var model: [Model]? {
         get { return self.storage?.readObjects(type: Model.self) ?? nil }
@@ -28,7 +28,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
     var selectAction: ((Model) -> ())?
     var deleteAction: ((Model) -> ())?
 
-    //  MARK: Class methods
+    //  MARK: - Class methods
     
     static func create(storage: Storage) -> Self {
         let controller = self.init()
@@ -37,7 +37,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         return controller
     }
     
-    //  MARK: View Lifecycle
+    //  MARK: - View Lifecycle
     
     override func loadView() {
         self.view = BaseTableView(frame: UIScreen.main.bounds)
@@ -55,7 +55,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         self.reloadData()
     }
     
-    //  MARK: Public API
+    //  MARK: - Public API
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
@@ -78,7 +78,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
         table?.dataSource = self
     }
     
-    //  MARK: UITableViewDelegate, UITableViewDataSource
+    //  MARK: - UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.model?.count ?? 0
