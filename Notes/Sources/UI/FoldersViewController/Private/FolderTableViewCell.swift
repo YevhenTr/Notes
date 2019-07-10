@@ -11,6 +11,7 @@ import UIKit
 class FolderTableViewCell: UITableViewCell {
 
     @IBOutlet var nameLabel: UILabel?
+    @IBOutlet var countLabel: UILabel?
 }
 
 extension FolderTableViewCell: Configurable {
@@ -18,6 +19,7 @@ extension FolderTableViewCell: Configurable {
     func configure(with model: Any) {
         if let model = model as? RLMFolder {
             self.nameLabel?.text = model.name
+            self.countLabel?.text = model.notes.count.description
         }
     }
 }

@@ -18,6 +18,7 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
 
     private var model: RLMNote?
     private let storage = NoteStorage()
+    private let folderStorage = FolderStorage()
     
     //  MARK: - Class methods
 
@@ -45,7 +46,7 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
     
     @objc private func onDone(_ sender: UIBarButtonItem) {
         //  TODO: save note to realm
-        self.createNote().do { self.storage.save(note: $0) }
+        self.createNote().do { self.folderStorage.add(note: $0) }
         
         self.navigationController?.popViewController(animated: true)
     }

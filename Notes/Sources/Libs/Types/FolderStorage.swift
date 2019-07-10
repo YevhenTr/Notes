@@ -16,11 +16,19 @@ class FolderStorage: BaseStorageRealm, FolderStorageProtocol {
     }
     
     func loadFolder(name: String) -> RLMFolder? {
-        return (self.readObject(id: name) as? RLMFolder)
+        return self.readObject(id: name)
     }
     
     func save(folder: RLMFolder) {
         self.save(object: folder)
+    }
+    
+    func add(note: RLMNote) {
+        guard let folder = self.loadFolder(name: note.folder) else { return }
+        
+        self.update(object: folder) { folder in
+            folder.notes.append(note)
+        }
     }
     
     func delete(folder: RLMFolder) {

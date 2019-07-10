@@ -21,7 +21,9 @@ class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, No
     //  MARK: - Properties
     
     override var model: [RLMNote]? {
-        return self.storage?.loadNotes(folderName: self.navigationItem.title!)
+        guard let folderName = self.navigationItem.title else { return nil }
+        
+        return self.storage?.loadNotes(with: folderName)?.sorted(by: { $0.timestamp > $1.timestamp })
     }
     
     //  MARK: - View Lifecycle

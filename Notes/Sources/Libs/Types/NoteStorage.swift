@@ -19,7 +19,7 @@ class NoteStorage: BaseStorageRealm, NoteStorageProtocol {
         return (self.readObject(id: id) as? RLMNote)
     }
     
-    func loadNotes(folderName: String) -> [RLMNote]? {
+    func loadNotes(with folderName: String) -> [RLMNote]? {
         return self.readObjects(where: NSPredicate(format: "folder == %@", folderName))
     }
     

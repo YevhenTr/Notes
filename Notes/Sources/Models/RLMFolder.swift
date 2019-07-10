@@ -17,12 +17,14 @@ typealias RLMObject = RealmSwift.Object
     
     enum Property: String {
         case name
+        case notes
         case timestame
     }
     
     //  MARK: - Properties
     
     public dynamic var name: String = ""
+    public let notes = List<RLMNote>()
     public var timestamp: Date = Date()
     
     //  MARK: - Init and Deinit
