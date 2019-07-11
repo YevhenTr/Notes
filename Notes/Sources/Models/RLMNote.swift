@@ -35,3 +35,10 @@ import RealmSwift
         self.timestamp = timestamp
     }
 }
+
+extension RLMNote: Comparable {
+    
+    static func < (lhs: RLMNote, rhs: RLMNote) -> Bool {
+        return lhs.timestamp < rhs.timestamp
+    }
+}

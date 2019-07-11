@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, NoteTableViewCell> {
+class NotesTableViewController: BaseTableViewController<RLMNote, FolderStorage, NoteTableViewCell> {
     
     //  MARK: - Subtypes
     
@@ -21,9 +21,11 @@ class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, No
     //  MARK: - Properties
     
     override var model: [RLMNote]? {
-        guard let folderName = self.navigationItem.title else { return nil }
-        
-        return self.storage?.loadNotes(with: folderName)?.sorted(by: { $0.timestamp > $1.timestamp })
+        return self.storage?.loadFolder(name: self.folderName)?.notes.array.sorted(by: > )
+    }
+    
+    private var folderName: String {
+        return self.navigationItem.title ?? ""
     }
     
     //  MARK: - View Lifecycle
@@ -38,14 +40,15 @@ class NotesTableViewController: BaseTableViewController<RLMNote, NoteStorage, No
     override func setupUI() {
         super.setupUI()
         
+        self.storage = FolderStorage()
+        
         let rootView = self.rootView
         
         rootView?.mainTableView?.rowHeight = Constants.defaultRowHeight
         rootView?.addButton?.title = Strings.addButtonTitle
         
         self.addAction = { [weak self] in
-//            self?.selectAction?(RLMNote(content: "test test test test test test test test ", timestamp: Date()))
-            guard let folderName = self?.navigationItem.title else { return }
+            guard let folderName = self?.folderName else { return }
             let controller = NoteViewController.create(with: RLMNote(content: "", folder: folderName))
             self?.navigationController?.pushViewController(controller, animated: true)
 

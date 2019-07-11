@@ -26,8 +26,10 @@ class FolderStorage: BaseStorageRealm, FolderStorageProtocol {
     func add(note: RLMNote) {
         guard let folder = self.loadFolder(name: note.folder) else { return }
         
-        self.update(object: folder) { folder in
+        self.update() {
             folder.notes.append(note)
+            
+            return folder
         }
     }
     

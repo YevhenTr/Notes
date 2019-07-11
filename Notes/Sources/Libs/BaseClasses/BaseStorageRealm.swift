@@ -36,9 +36,9 @@ class BaseStorageRealm: StorageProtocol {
         }
     }
     
-    public func update<T: RealmObject>(object: T, action: (T) -> ()) {
-        self.realm?.writeOperation { _ in
-            action(object)
+    public func update<T: RealmObject>(action: () -> (T)) {
+        self.realm?.writeOperation {
+            $0.add(action(), update: true)
         }
     }
     

@@ -15,6 +15,12 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
     
     typealias Strings = AppConstants.Folders
     
+    //  MARK: - Properties
+
+    override var model: [RLMFolder]? {
+        return self.storage?.loadAllFolders()?.sorted(by: < )
+    }
+    
     //  MARK: - View Lifecycle
 
     override func viewDidLoad() {
@@ -26,6 +32,8 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
     
     override func setupUI() {
         super.setupUI()
+        
+        self.storage = FolderStorage()
         
         self.navigationItem.title = Strings.navigationTitle
         self.rootView?.addButton?.title = Strings.addButtonTitle
@@ -44,7 +52,7 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
         }
         
         self.selectAction = { [weak self] folder in
-            let controller = NotesTableViewController.create(storage: NoteStorage())
+            let controller = NotesTableViewController()
             
             controller.navigationItem.title = folder.name
             self?.navigationController?.pushViewController(controller, animated: true)

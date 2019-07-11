@@ -16,10 +16,10 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
     typealias RootView = BaseTableView
     
     //  MARK: - Properties
+    
     var storage: Storage?
-    var model: [Model]? {
-        get { return self.storage?.readObjects(type: Model.self) ?? nil }
-    }
+    var model: [Model]? { return nil }
+    
     var addAction: (() -> ())? {
         didSet {
             self.rootView?.addAction = self.addAction
@@ -27,15 +27,6 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
     }
     var selectAction: ((Model) -> ())?
     var deleteAction: ((Model) -> ())?
-
-    //  MARK: - Class methods
-    
-    static func create(storage: Storage) -> Self {
-        let controller = self.init()
-        controller.storage = storage
-        
-        return controller
-    }
     
     //  MARK: - View Lifecycle
     

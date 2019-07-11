@@ -15,7 +15,7 @@ class FolderTableViewCell: UITableViewCell {
 }
 
 extension FolderTableViewCell: Configurable {
-    #warning("Constraints")
+    
     func configure(with model: Any) {
         if let model = model as? RLMFolder {
             self.nameLabel?.text = model.name

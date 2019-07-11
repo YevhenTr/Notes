@@ -36,3 +36,10 @@ typealias RLMObject = RealmSwift.Object
         self.timestamp = timestamp
     }
 }
+
+extension RLMFolder: Comparable {
+    
+    static func < (lhs: RLMFolder, rhs: RLMFolder) -> Bool {
+        return lhs.timestamp < rhs.timestamp
+    }
+}
