@@ -45,7 +45,6 @@ class NoteViewController: UIViewController, StoryboardLoadable, RootViewGettable
     }
     
     @objc private func onDone(_ sender: UIBarButtonItem) {
-        //  TODO: save note to realm
         self.createNote().do { self.folderStorage.add(note: $0) }
         
         self.navigationController?.popViewController(animated: true)

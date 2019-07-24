@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="cVg-7l-sfz">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="GtE-EJ-ZPY" customClass="SearchViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="352-ED-JDJ" customClass="SearchView" customModule="Notes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqE-eE-Xy7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
+                                <items>
+                                    <navigationItem title="Search" prompt=" " id="KOV-0c-luZ">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="i2T-lY-qsH">
+                                            <connections>
+                                                <action selector="onDone:" destination="GtE-EJ-ZPY" id="c5Y-N3-NHT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAn-FO-cry">
+                                <rect key="frame" x="20" y="105" width="309" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzl-iz-oRw">
+                                <rect key="frame" x="344" y="105" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="D8h-r4-UA6"/>
+                                    <constraint firstAttribute="height" constant="30" id="Evf-O9-LN6"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onStart:" destination="GtE-EJ-ZPY" eventType="touchUpInside" id="TBH-eG-yxs"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9mL-Jx-4Rs">
+                                <rect key="frame" x="20" y="155" width="374" height="687"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="hCB-tN-Vxr">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hCB-tN-Vxr" id="gRC-Xc-CS7">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GtE-EJ-ZPY" id="V8q-mh-49k"/>
+                                    <outlet property="delegate" destination="GtE-EJ-ZPY" id="9rv-33-UXE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jtR-tw-azk" firstAttribute="bottom" secondItem="9mL-Jx-4Rs" secondAttribute="bottom" constant="20" id="9ZE-4r-7NF"/>
+                            <constraint firstItem="NAn-FO-cry" firstAttribute="top" secondItem="NqE-eE-Xy7" secondAttribute="bottom" constant="27" id="Ayq-IP-1KY"/>
+                            <constraint firstItem="NqE-eE-Xy7" firstAttribute="leading" secondItem="jtR-tw-azk" secondAttribute="leading" id="FEh-eh-6Os"/>
+                            <constraint firstItem="9mL-Jx-4Rs" firstAttribute="top" secondItem="NAn-FO-cry" secondAttribute="bottom" constant="20" id="X5F-Jt-Zif"/>
+                            <constraint firstItem="NqE-eE-Xy7" firstAttribute="trailing" secondItem="jtR-tw-azk" secondAttribute="trailing" id="egF-gy-n2K"/>
+                            <constraint firstItem="9mL-Jx-4Rs" firstAttribute="leading" secondItem="jtR-tw-azk" secondAttribute="leading" constant="20" id="gi9-WN-1Kz"/>
+                            <constraint firstItem="jtR-tw-azk" firstAttribute="trailing" secondItem="9mL-Jx-4Rs" secondAttribute="trailing" constant="20" id="hdC-J9-8U9"/>
+                            <constraint firstItem="NqE-eE-Xy7" firstAttribute="top" secondItem="352-ED-JDJ" secondAttribute="top" id="kZa-m0-fqO"/>
+                            <constraint firstItem="qzl-iz-oRw" firstAttribute="top" secondItem="NqE-eE-Xy7" secondAttribute="bottom" constant="27" id="pTF-XF-EKU"/>
+                            <constraint firstItem="NAn-FO-cry" firstAttribute="leading" secondItem="jtR-tw-azk" secondAttribute="leading" constant="20" id="qmI-NK-gpF"/>
+                            <constraint firstItem="qzl-iz-oRw" firstAttribute="leading" secondItem="NAn-FO-cry" secondAttribute="trailing" constant="15" id="wuM-vj-QRH"/>
+                            <constraint firstItem="jtR-tw-azk" firstAttribute="trailing" secondItem="qzl-iz-oRw" secondAttribute="trailing" constant="20" id="y23-Qv-Mbp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jtR-tw-azk"/>
+                        <connections>
+                            <outlet property="bottomSpacing" destination="9ZE-4r-7NF" id="NEl-IB-d8K"/>
+                            <outlet property="searchTextField" destination="NAn-FO-cry" id="6e5-8N-GR6"/>
+                            <outlet property="tableView" destination="9mL-Jx-4Rs" id="NG1-gt-xbE"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlt-vV-j3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="172.76785714285714"/>
+        </scene>
+    </scenes>
+</document>

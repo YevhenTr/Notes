@@ -19,12 +19,7 @@ class BaseTableViewController<Model: RLMObject & Identifiable, Storage: BaseStor
     
     var storage: Storage?
     var model: [Model]? { return nil }
-    
-    var addAction: (() -> ())? {
-        didSet {
-            self.rootView?.addAction = self.addAction
-        }
-    }
+
     var selectAction: ((Model) -> ())?
     var deleteAction: ((Model) -> ())?
     

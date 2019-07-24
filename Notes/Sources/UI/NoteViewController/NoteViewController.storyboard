@@ -30,7 +30,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-Is-Pcy">
                                 <rect key="frame" x="24" y="114" width="366" height="682"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="44" id="aYb-pb-4pb"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="hWs-7V-lub"/>
+                                    <barButtonItem systemItem="trash" id="hWs-7V-lub"/>
                                 </items>
                             </toolbar>
                         </subviews>

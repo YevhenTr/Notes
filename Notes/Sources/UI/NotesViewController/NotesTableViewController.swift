@@ -47,13 +47,21 @@ class NotesTableViewController: BaseTableViewController<RLMNote, FolderStorage, 
         rootView?.mainTableView?.rowHeight = Constants.defaultRowHeight
         rootView?.addButton?.title = Strings.addButtonTitle
         
-        self.addAction = { [weak self] in
+        rootView?.addAction = { [weak self] in
             guard let folderName = self?.folderName else { return }
             let controller = NoteViewController.create(with: RLMNote(content: "", folder: folderName))
-            self?.navigationController?.pushViewController(controller, animated: true)
 
+            self?.navigationController?.pushViewController(controller, animated: true)
         }
-        
+
+        rootView?.searchAction = {
+            let controller = SearchViewController.loadFromStoryboard()
+            controller.folderName = self.folderName
+            controller.hostController = self
+
+            self.present(controller, animated: true)
+        }
+
         self.selectAction = { [weak self] note in
             let controller = NoteViewController.create(with: note)
             

@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="addButton" destination="T74-na-5iy" id="klu-LK-etz"/>
                 <outlet property="mainTableView" destination="8LK-hf-qZM" id="gjd-IU-mQv"/>
+                <outlet property="searchButton" destination="hd8-Rf-6aN" id="5It-Mp-ZJh"/>
+                <outlet property="toolbar" destination="ltR-y0-JOl" id="h4q-d7-zMl"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -31,6 +33,11 @@
                         <constraint firstAttribute="height" constant="44" id="LIw-3p-rRN"/>
                     </constraints>
                     <items>
+                        <barButtonItem systemItem="search" id="hd8-Rf-6aN">
+                            <connections>
+                                <action selector="onSearchButton:" destination="-1" id="Auo-w6-gep"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="GEW-RI-faE"/>
                         <barButtonItem title="Item" id="T74-na-5iy">
                             <connections>

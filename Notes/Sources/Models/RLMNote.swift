@@ -34,6 +34,12 @@ import RealmSwift
         self.folder = folder
         self.timestamp = timestamp
     }
+
+    //  MARK: - Public API
+
+    override static func indexedProperties() -> [String] {
+        return [Property.content.rawValue, Property.timestame.rawValue]
+    }
 }
 
 extension RLMNote: Comparable {

@@ -38,7 +38,7 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
         self.navigationItem.title = Strings.navigationTitle
         self.rootView?.addButton?.title = Strings.addButtonTitle
         
-        self.addAction = { [weak self] in
+        self.rootView?.addAction = { [weak self] in
             let cancel = UIAlertAction(title: AppConstants.cancel, style: .cancel)
             let onPhone = UIAlertAction(title: Strings.onPhone, style: .default) { _ in
                 guard let count = self?.model?.count else { return }
@@ -61,6 +61,8 @@ class FoldersViewController: BaseTableViewController<RLMFolder, FolderStorage, F
         self.deleteAction = { [weak self] folder in
             self?.storage?.delete(folder: folder)
         }
+
+        self.rootView?.toolbar?.items?.remove(at: 0)  //  remove 'search' item
     }
     
     private func createFolder(at indexPath: IndexPath) {

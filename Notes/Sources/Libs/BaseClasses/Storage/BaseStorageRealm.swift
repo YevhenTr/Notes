@@ -51,8 +51,8 @@ class BaseStorageRealm: StorageProtocol {
         return self.realm?.objects(T.self).array
     }
     
-    public func readObject<T: RealmObject>(where: NSPredicate) -> T? {
-        return nil
+    public func readObject<T: RealmObject>(where predicate: NSPredicate) -> T? {
+        return self.readObjects(where: predicate)?.first
     }
     
     public func readObjects<T: RealmObject>(where predicate: NSPredicate) -> [T]? {

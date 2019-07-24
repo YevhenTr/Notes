@@ -14,12 +14,19 @@ class BaseTableView: NibDesignable {
     
     @IBOutlet var mainTableView: UITableView?
     @IBOutlet var addButton: UIBarButtonItem?
-    
+    @IBOutlet var searchButton: UIBarButtonItem?
+    @IBOutlet var toolbar: UIToolbar?
+
     var addAction: (() -> ())?
+    var searchAction: (() -> ())?
     
     //  MARK: - Public API
     
     @IBAction func onAddButton(_ sender: UIBarButtonItem) {
         self.addAction?()
+    }
+
+    @IBAction func onSearchButton(_ sender: UIBarButtonItem) {
+        self.searchAction?()
     }
 }

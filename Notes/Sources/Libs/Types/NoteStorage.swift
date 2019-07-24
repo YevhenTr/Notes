@@ -30,27 +30,9 @@ class NoteStorage: BaseStorageRealm, NoteStorageProtocol {
     func delete(note: RLMNote) {
         self.deleteObject(id: note.id.description, type: RLMNote.self)
     }
-}
 
-//class BaseItemStorage<Item: Identifiable>: BaseStorageRealm {
-//
-//    func loadAllItems() -> [Item]? {
-//        return self.readObjects(type: Item.self)?
-//            .asArray()
-//            .map { $0.asFolder() }
-//            .sorted(by: { $0.timestamp < $1.timestamp})
-//    }
-//
-//    func loadFolder(name: String) -> Folder? {
-//        return (self.readObject(id: name) as? RLMFolder)?.asFolder()
-//    }
-//
-//    func save(folder: Folder) {
-//        self.save(object: folder.asRealmObject())
-//    }
-//
-//    func delete(folder: Folder) {
-//        self.deleteObject(id: folder.name)
-//    }
-//}
+    func findNotes(with string: String, in folder: String) -> [RLMNote]? {
+        return self.readObjects(where: NSPredicate(format: "folder = %@ AND content contains[c] %@", folder, string))
+    }
+}
 
